@@ -30,10 +30,6 @@ export async function getData(path, id) {
         const route = id ? `${path}/${id}` : path;
         const data = await fetch(route);
 
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.statusText}`);
-        }
-
         return await data.json();
     } catch (err) {
         return err;
